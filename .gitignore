@@ -7,4 +7,13 @@
 *.tsv
 *.txt
 *.csv
+*.log
+*_fastqc.zip
+*_fastqc.html
+*.command.*
+*.exitcode
+*singularity
 !data/metadata.csv
+*/cache/*
+*.bam
+*work/*
