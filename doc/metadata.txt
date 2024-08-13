@@ -1,0 +1,1 @@
+NGI_Sample_ID	Name	Num	Group
