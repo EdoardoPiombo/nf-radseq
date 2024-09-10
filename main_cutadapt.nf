@@ -87,7 +87,7 @@ workflow {
   // Make a population description based on the CSV
   make_popfile(
     data.map(it -> {
-      [it.Id + "_trimmed", it.Population].join("\t")
+      [it.Id + "_cutadapt", it.Population].join("\t")
     })
     .reduce {
       a, b -> [a, b].join("\n")
@@ -156,9 +156,10 @@ workflow {
   )
   // Generate final report
   multiqc(
-    fq_raw.out.data
-    .concat(fq_tri.out.data)
+    fq_tri.out.data
+    .concat(fq_cut.out.data)
     .concat(trimmomatic.out.log)
+    .concat(cutadapt.out.log)
     .concat(gstacks.out.log)
     .concat(populations.out.log)
     .flatten()
