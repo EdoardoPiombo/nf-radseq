@@ -30,7 +30,7 @@ include { bibtex as mq_bib } from './modules/multiqc.nf'
   from the CSV metadata.
 */
 process make_popfile {
-  container "bschiffthaler/stacks:" + params.stacks_version
+  container "quay.io/biocontainers/stacks:2.65--hdcf5f25_0"
   executor params.executor
   cpus 1
   publishDir "analysis/populations"
