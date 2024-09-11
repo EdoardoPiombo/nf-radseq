@@ -1,16 +1,16 @@
 nextflow.enable.dsl=2
 
-include { citekey as fq_citekey } from './modules/fastqc.nf'
-include { bibtex as fq_bib } from './modules/fastqc.nf'
+include { citekey as fq_citekey } from './modules_quay/fastqc.nf'
+include { bibtex as fq_bib } from './modules_quay/fastqc.nf'
 
 include { citekey as tr_citekey } from './modules/trimmomatic.nf'
 include { bibtex as tr_bib } from './modules/trimmomatic.nf'
 
-include { citekey as st_citekey } from './modules/stacks.nf'
-include { bibtex as st_bib } from './modules/stacks.nf'
+include { citekey as st_citekey } from './modules_quay/stacks.nf'
+include { bibtex as st_bib } from './modules_quay/stacks.nf'
 
-include { citekey as mq_citekey } from './modules/multiqc.nf'
-include { bibtex as mq_bib } from './modules/multiqc.nf'
+include { citekey as mq_citekey } from './modules_quay/multiqc.nf'
+include { bibtex as mq_bib } from './modules_quay/multiqc.nf'
 
 process gen_materials {
 

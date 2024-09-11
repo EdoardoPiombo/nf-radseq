@@ -1,29 +1,29 @@
 nextflow.enable.dsl = 2
 
-include { fastqc_pe as fq_raw } from './modules/fastqc.nf'
-include { citekey as fq_citekey } from './modules/fastqc.nf'
-include { bibtex as fq_bib } from './modules/fastqc.nf'
-include { map_input_pe as fqc_input } from './modules/fastqc.nf'
-include { fastqc_pe as fq_tri } from './modules/fastqc.nf'
+include { fastqc_pe as fq_raw } from './modules_quay/fastqc.nf'
+include { citekey as fq_citekey } from './modules_quay/fastqc.nf'
+include { bibtex as fq_bib } from './modules_quay/fastqc.nf'
+include { map_input_pe as fqc_input } from './modules_quay/fastqc.nf'
+include { fastqc_pe as fq_tri } from './modules_quay/fastqc.nf'
 
 include { trimmomatic_pe as trimmomatic } from './modules/trimmomatic.nf'
 include { map_input_pe as tri_input } from './modules/trimmomatic.nf'
 include { citekey as tr_citekey } from './modules/trimmomatic.nf'
 include { bibtex as tr_bib } from './modules/trimmomatic.nf'
 
-include { process_radtags_pe as process_radtags } from './modules/stacks.nf'
-include { ustacks } from './modules/stacks.nf'
-include { cstacks } from './modules/stacks.nf'
-include { sstacks } from './modules/stacks.nf'
-include { tsv2bam } from './modules/stacks.nf'
-include { gstacks } from './modules/stacks.nf'
-include { populations } from './modules/stacks.nf'
-include { citekey as st_citekey } from './modules/stacks.nf'
-include { bibtex as st_bib } from './modules/stacks.nf'
+include { process_radtags_pe as process_radtags } from './modules_quay/stacks.nf'
+include { ustacks } from './modules_quay/stacks.nf'
+include { cstacks } from './modules_quay/stacks.nf'
+include { sstacks } from './modules_quay/stacks.nf'
+include { tsv2bam } from './modules_quay/stacks.nf'
+include { gstacks } from './modules_quay/stacks.nf'
+include { populations } from './modules_quay/stacks.nf'
+include { citekey as st_citekey } from './modules_quay/stacks.nf'
+include { bibtex as st_bib } from './modules_quay/stacks.nf'
 
-include { multiqc } from './modules/multiqc.nf'
-include { citekey as mq_citekey } from './modules/multiqc.nf'
-include { bibtex as mq_bib } from './modules/multiqc.nf'
+include { multiqc } from './modules_quay/multiqc.nf'
+include { citekey as mq_citekey } from './modules_quay/multiqc.nf'
+include { bibtex as mq_bib } from './modules_quay/multiqc.nf'
 
 /*
   This is a quick helper process to generate a population file for Stacks
